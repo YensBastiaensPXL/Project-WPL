@@ -7,6 +7,9 @@
 main {
   padding: 5rem auto 5rem auto;
 }
+:root {
+  scroll-behavior: smooth;
+}
 /* NAV */
 .section1 nav {
   text-align: center;
@@ -55,11 +58,25 @@ nav a:active {
   display: flex;
   align-items: center;
   width: 80%;
+  justify-content: space-between;
   margin: 5rem auto 5rem auto;
+  gap: 20rem;
 }
 
 #about_me_photo {
-  width: 30rem;
+  width: 23rem;
+  height: auto;
+}
+.container_image img {
+  transition: box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.container_image img:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.container_image img:active {
+  box-shadow: none;
+  border: 2px solid grey; /* Change the color to the desired border color */
 }
 
 /* EDUCATION */
@@ -96,7 +113,7 @@ nav a:active {
 .remaining {
   height: 100%;
   width: 25%;
-  background-color: #ccc; 
+  background-color: #ccc;
   position: absolute;
   top: 0;
   right: 0;
@@ -113,14 +130,28 @@ nav a:active {
 }
 .skills {
   flex: 0 0 calc(33.333% - 6rem);
-  
 }
 .skills_grid {
   display: flex;
   justify-content: space-between;
-  
 }
 
+/* FOOTER */
+
+footer {
+  background: red;
+  padding: 3rem;
+}
+footer div {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 0 auto;
+}
+footer a {
+  text-decoration: none;
+}
 /*#naam {
   font-size: 40px;
 }
