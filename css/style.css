@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+main {
+  padding: 5rem auto 5rem auto;
+}
 /* NAV */
 .section1 nav {
   text-align: center;
@@ -96,6 +100,25 @@ nav a:active {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+/* Skills */
+
+.skills_section {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto 5rem auto;
+  width: 80%;
+  gap: 5rem;
+}
+.skills {
+  flex: 0 0 calc(33.333% - 6rem);
+  
+}
+.skills_grid {
+  display: flex;
+  justify-content: space-between;
+  
 }
 
 /*#naam {
