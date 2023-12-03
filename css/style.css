@@ -52,15 +52,20 @@ nav a:active {
     rgba(0, 0, 0, 0.7)
   );
 }
+.section1 button {
+  background-color: #ff6b00;
+  border: none;
+  padding: 1rem;
+}
 
 /* ABOUT */
 .about_section {
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 65%;
   justify-content: space-between;
   margin: 5rem auto 5rem auto;
-  gap: 20rem;
+  gap: 10%;
 }
 
 #about_me_photo {
@@ -81,7 +86,7 @@ nav a:active {
 
 /* EDUCATION */
 .education_section {
-  background: blue;
+  background: #fff3ea;
 }
 .education_styling {
   width: 80%;
@@ -117,6 +122,18 @@ nav a:active {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.education_list {
+  list-style-type: none;
+}
+.subtitles_education {
+  font-weight: 800;
+  margin-top: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+.subtitles_certifications {
+  
 }
 
 /* Skills */
