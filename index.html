@@ -10,7 +10,7 @@
 
 <body>
   <header>
-    <div class="menu-icon" id="mobile-menu-icon">&#9776;</div>
+    <div class="menu-icon" id="mobile_icon">&#9776;</div>
     <nav>
       <a href="#scrollToTop">Home</a>
       <a href="#about">About</a>
@@ -27,7 +27,7 @@
       <div class="section1_button">
         <a href="#about">About me</a>
       </div>
-      
+
     </div>
   </section>
   <main>
@@ -35,7 +35,7 @@
       <div class="about_me_info">
         <h4>About me</h4>
         <h2>I'm a programmer & Videographer</h2>
-        <p>
+        <p class="desktop_text">
           On August 6, 2018, I got my dog Jack, and it sparked my love for taking pictures again. From walks in the
           neighborhood to traveling across Europe with Jack, each photo captures a feeling of freedom. <br><br>
           Besides photography, I also really enjoy programming. It's like putting together puzzle pieces. Whether I'm
@@ -43,6 +43,13 @@
           <br><br>Hitting goals in both photography and programming is awesome. The mix of these things helps me be more
           creative and keeps me excited about learning and expressing myself.
         </p>
+        <p class="mobile_text">
+          Got my dog Jack on August 6, 2018—rekindled my love for photography. From local walks to European adventures,
+          each pic feels like freedom. <br><br>
+          Programming is my puzzle—love putting pieces together. Whether snapping pics or coding, it's a cool blend of
+          art and tech. <br><br>
+          Achieving goals in both photography and programming is thrilling. This mix keeps me creative, excited to
+          learn, and express myself.</p>
       </div>
       <div>
         <div class="container_image">
@@ -63,34 +70,51 @@
     <section class="education_section" id="education">
       <div class="education_styling">
         <div class="education_titles">
-          <h4>Resume</h4>
+          <h4>Education</h4>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Education</th>
-              <th>Certifications</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Inspiro College</td> 
-              <td>Certificate Web Developer</td>
-            </tr>
-            <tr>
-              <td>Social technical sciences, anticipated in june 2019</td>
-              <td>Certificate ICT Programming</td>
-            </tr>
-            <tr>
-              <td>CVO De Verdieping</td>
-              <td>Certificate start to ICT</td>
-            </tr>
-            <tr>
-              <td>Full Stack Web Developer, anticipated in june 2022</td>
-            </tr>
-          </tbody>
-        </table>
-       <!--  <div class="grid_education">
+        <div class="table_structure">
+          <table class="table1">
+            <thead>
+              <tr>
+                <th>Diploma's</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Inspiro College</td>
+              </tr>
+              <tr>
+                <td>Social technical sciences, anticipated in june 2019</td>
+              </tr>
+              <tr>
+                <td>CVO De Verdieping</td>
+              </tr>
+              <tr>
+                <td>Full Stack Web Developer, anticipated in june 2022</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table2">
+            <thead>
+              <tr>
+                <th>Certifications</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Certificate Web Developer</td>
+              </tr>
+              <tr>
+                <td>Certificate ICT Programming</td>
+              </tr>
+              <tr>
+                <td>Certificate start to ICT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!--  <div class="grid_education">
           <div>
             <h3>Education</h3>
             <div></div>
@@ -242,9 +266,10 @@
 </body>
 
 <script>
-  document.getElementById('mobile-menu-icon').addEventListener('click', function () {
+  document.getElementById('mobile_icon').addEventListener('click', function () {
     var nav = document.querySelector('nav');
     nav.classList.toggle('show');
   });
 </script>
+
 </html>
