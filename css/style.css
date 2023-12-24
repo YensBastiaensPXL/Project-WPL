@@ -12,11 +12,14 @@ main {
 }
 /* General */
 h2 {
+  font-size: 2.5rem;
+}
+h1 {
   font-size: 3rem;
 }
 h4 {
   font-size: 1.5rem;
-  color: #57A7D9;
+  color: #57a7d9;
 }
 p {
   font-size: 1.1rem;
@@ -29,7 +32,11 @@ nav {
   margin-bottom: -4rem;
   position: fixed;
   z-index: 2;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.05)
+  );
   width: 100%;
 }
 nav a {
@@ -37,11 +44,67 @@ nav a {
   color: white;
   margin: 0 3rem;
   display: inline-block;
+  font-size: 1.2rem;
 }
 nav a:active {
   color: black;
 }
+@media screen and (min-width: 871px) {
+  .menu-icon {
+    display: none;
+  }
+}
+@media screen and (max-width: 870px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background: linear-gradient(
+    to bottom,
+    #d9a357,
+    rgba(0, 0, 0, 0.05)
+  );
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding-bottom: -1rem;
+  }
+  .menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2; /* Ensure the icon has a higher z-index than section1 and the navigation */
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    background-color: #d9a357;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.2rem;
+    z-index: 3;
+  }
+  nav.show {
+    display: flex;
+    position: fixed;
+    background-color: #d9a357;
+    margin-top: -11%;
+    z-index: 2;
+  }
 
+  nav a {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    width: 15rem;
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+    
+  }
+  nav a:last-child {
+    border-bottom: none;
+  }
+}
 
 /* SECTION 1*/
 .section1 {
@@ -56,6 +119,10 @@ nav a:active {
   justify-content: center;
   position: relative;
   z-index: 1;
+}
+.section1 h4 {
+  color: white;
+  font-size: 2rem;
 }
 .section1 div {
   color: white;
@@ -75,16 +142,24 @@ nav a:active {
     rgba(0, 0, 0, 0.7)
   );
 }
-.section1 button {
-  background-color: #ff6b00;
-  border: none;
-  margin-top: 1.5rem;
+.section1_button {
+  margin-top: 2.5rem;
+}
+.section1 a {
+  background-color: #d9a357;
+  transition: 0.3s;
+  border: 1px;
+  border-radius: 5px;
   padding: 1rem;
+  font-size: 1.2rem;
   color: white;
+  text-decoration: none;
   font-weight: bold;
 }
-.section1 button:hover {
+.section1 a:hover {
   cursor: pointer;
+  background-color: #57a7d9;
+  color: white;
 }
 
 /* ABOUT */
@@ -96,7 +171,9 @@ nav a:active {
   margin: 5rem auto 5rem auto;
   gap: 10%;
 }
-
+.about_me_info h2 {
+padding-bottom: 1rem;
+}
 #about_me_photo {
   width: 23rem;
   height: auto;
@@ -111,10 +188,10 @@ nav a:active {
 }
 .container_image img:active {
   box-shadow: none;
-  border: 2px solid grey; /* Change the color to the desired border color */
+  border: 2px solid grey;
 }
 .short_info {
-  background-color: #D9A357;
+  background-color: #d9a357;
   border-radius: 5px;
   padding: 1rem;
   max-width: 200px;
@@ -122,16 +199,20 @@ nav a:active {
   margin-left: 10px;
   z-index: 1;
   position: relative;
+  transition: 0.3s ease;
+}
+.short_info:hover {
+  background-color: #57a7d9;
 }
 .short_info ul {
   list-style-type: none;
 }
-.short_info h3 , .short_info li {
+.short_info h3,
+.short_info li {
   color: white;
   font-size: 20px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2)
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
-
 
 /* EDUCATION */
 .education_section {
@@ -142,12 +223,42 @@ nav a:active {
   margin: 5rem auto 5rem auto;
   padding: 5rem 0 5rem 0;
 }
-.education_styling h3 {
-  font-size: 1.1rem;
-}
+
 .education_titles {
   text-align: center;
 }
+table {
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+tr {
+  position: relative;
+}
+table th {
+  text-align: left;
+  font-size: 2rem;
+}
+table td {
+  padding-right: 1rem;
+}
+tr:not(:last-child)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 100%;
+  height: 100%;
+  width: 10px; /* Adjust the value to control the space between rows */
+}
+td:nth-child(odd) {
+  padding-left: 0px;
+}
+
+td:nth-child(even) {
+  padding-left: 0px; 
+}
+/*
 .grid_education {
   display: flex;
   justify-content: space-between;
@@ -173,71 +284,8 @@ nav a:active {
 .subtitles_certifications {
   margin-top: 1.4rem;
 }
+*/
 
-/* TIMELINE WORK EXPERIENCE */
-.work_section {
-  text-align: center;
-  
-}
-.design-section {
-  display: flex;
-  flex-direction: column;
-  padding: 3.5% 0;
-}
-
-.design {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.timeline {
-  width: 80%;
-  height: auto;
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.content {
-  background: #1f1f1f;
-  color: white;
-  padding: 1.75rem;
-  /*overflow-wrap: break-word !important; */
-  border-radius: 6px;
-  margin: 0px 20px 20px 20px;
-}
-.content li {
-  list-style-type: none;
-}
-
-@media screen and (min-width: 768px) {
-  .timeline {
-    display: grid;
-    grid-template-columns: 1fr 3px 1fr;
-  }
-  .timeline_line {
-    position: relative;
-    background-image: linear-gradient(45deg, green, yellow, #8a2387);
-    width: 4px;
-    height: 100%;
-  }
-  .main-middle {
-    opacity: 0;
-  }
-  .timeline-circle {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-image: linear-gradient(45deg, orange, #e94057, #8a2387);
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-}
 
 /* Skills */
 
@@ -257,6 +305,7 @@ nav a:active {
 }
 .skills_grid {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 .progress-bar {
@@ -280,11 +329,120 @@ nav a:active {
   border-radius: 20px;
 }
 
+/* TIMELINE WORK EXPERIENCE */
+.work_section {
+  text-align: center;
+}
+.design-section {
+  display: flex;
+  flex-direction: column;
+  padding: 3.5% 0;
+}
+
+.design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/*.content {
+  background-image: linear-gradient(45deg, #57a7d9, #d9a357);
+  color: white;
+  transition: 1s;
+  padding: 1.75rem;
+  border-radius: 6px;
+  margin: 0px 20px 20px 20px;
+}
+.content:hover {
+  background-image: linear-gradient(45deg, #d9a357, #57a7d9);
+  transition: background 1s;
+} */
+.content {
+  position: relative;
+  color: white;
+  padding: 1.75rem;
+  border-radius: 6px;
+  margin: 0px 20px 20px 20px;
+  overflow: hidden;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #57a7d9, #d9a357);
+  opacity: 1;
+  transition: 0.3s ease;
+  z-index: -1;
+}
+
+.content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #d9a357, #57a7d9);
+  opacity: 0;
+  transition: 0.3s ease;
+  z-index: -1;
+}
+.content:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.content:hover::before {
+  opacity: 0;
+
+}
+
+.content:hover::after {
+  opacity: 1;
+  
+}
+.content li {
+  list-style-type: none;
+}
+
+@media screen and (min-width: 750px) {
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+  }
+  .timeline-circle {
+    height: 18px;
+    transform: translateX(-40%);
+    width: 18px;
+    position: absolute;
+    background-image: linear-gradient(45deg, orange, #d9a357);
+    border-radius: 50%;
+  }
+  .timeline_line {
+    position: relative;
+    background-image: linear-gradient(45deg, #57a7d9, #d9a357);
+    width: 4px;
+  }
+
+}
+
 /* FOOTER */
 
 footer {
-  background: red;
-  padding: 3rem;
+  background: #d9a357;
+  padding: 2rem;
 }
 footer div {
   width: 80%;
@@ -292,7 +450,23 @@ footer div {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto 0 auto;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  
 }
 footer a {
   text-decoration: none;
+  color: white;
+  background-color: #57a7d9;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+footer a:visited {
+  text-decoration: none;
+}
+footer a:hover {
+  background-color: white;
+  color: #57a7d9;
 }
